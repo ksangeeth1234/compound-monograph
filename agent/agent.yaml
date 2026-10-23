@@ -1,0 +1,6 @@
+name: antigravity-preview-09-2026
+description: A managed agent for the PubChem Explorer, capable of resolving compounds, fetching properties, and running Python code to analyze chemical data.
+skills:
+  - agent/skills/pubchem_skill.py
+connectors:
+  - agent/connectors/pubchem_api.py

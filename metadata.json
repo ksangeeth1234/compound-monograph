@@ -1,0 +1,8 @@
+{
+  "name": "Remix Compound Monograph",
+  "description": "Chemical compound explorer querying PubChem with 2D structures, physicochemical properties, bioactivity assays, similarity search, comparative analysis, and cheminformatics agent trace.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

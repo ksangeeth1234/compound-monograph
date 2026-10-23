@@ -1,0 +1,218 @@
+@import "tailwindcss";
+
+:root {
+  /* Surfaces — Warm archival paper & clean ink */
+  --surface: #FAF9F5;         /* Primary page & reading canvas */
+  --surface-sunken: #F2EFE9;  /* Subtle specimen backdrop */
+  --surface-muted: #EAE6DF;   /* Hover & subtle emphasis */
+  --surface-pressed: #DFDBD2; /* Active state */
+  --surface-accent: #EEF2F6;  /* Subtle interactive highlight */
+  --surface-ok: #EFF5F0;
+  --surface-warn: #FBF4E8;
+  --surface-fail: #FBE9E9;
+  --divider: #DCD8D0;
+
+  /* Ink — High-contrast editorial charcoal */
+  --ink: #111110;
+  --ink-muted: #4A4945;
+  --ink-subtle: #73716B;
+
+  /* Signal — Calibrated institutional cobalt & semantic tones */
+  --accent: #1D4ED8;
+  --ok: #155E2B;
+  --warn: #854D0E;
+  --fail: #991B1B;
+
+  /* Categorical — Charts only */
+  --cat1: #1D4ED8;
+  --cat2: #64748B;
+  --cat3: #0F766E;
+  --cat4: #B45309;
+  --cat5: #4D7C0F;
+  --cat6: #9F1239;
+
+  /* Shape — Minimal, unboxed, architectural */
+  --r-pill: 0px;
+  --r-card: 0px;
+  --r-inset: 2px;
+  --shadow-float: none;
+
+  /* Space — 4px base */
+  --s1: 4px;
+  --s2: 8px;
+  --s3: 12px;
+  --s4: 16px;
+  --s6: 24px;
+  --s8: 32px;
+
+  /* Typography — 2+1 Editorial & Scientific System */
+  --font-display: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --font: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Legacy aliases mapped cleanly */
+  --sg-page: var(--surface);
+  --sg-surface: var(--surface);
+  --sg-surface-hover: var(--surface-muted);
+  --sg-surface-active: var(--surface-pressed);
+  --sg-surface-sunken: var(--surface-sunken);
+  --sg-border: var(--divider);
+  --sg-border-subtle: var(--divider);
+  --sg-border-strong: var(--ink);
+  --sg-text-primary: var(--ink);
+  --sg-text-secondary: var(--ink-muted);
+  --sg-text-tertiary: var(--ink-subtle);
+  --sg-text-inverse: #FFFFFF;
+  --sg-accent: var(--accent);
+  --sg-accent-hover: #1E40AF;
+  --sg-accent-active: #1E3A8A;
+  --sg-accent-subtle: var(--surface-accent);
+  --sg-success: var(--ok);
+  --sg-success-subtle: var(--surface-ok);
+  --sg-warning: var(--warn);
+  --sg-warning-subtle: var(--surface-warn);
+  --sg-error: var(--fail);
+  --sg-error-subtle: var(--surface-fail);
+  --sg-info: var(--accent);
+  --sg-info-subtle: var(--surface-accent);
+  --sg-shadow-sm: none;
+  --sg-shadow-md: none;
+  --sg-shadow-lg: none;
+}
+
+body {
+  background-color: var(--surface);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.015em;
+}
+
+.font-body {
+  font-family: var(--font);
+}
+
+code, pre, .font-mono {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Skeleton shimmer */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--surface-sunken) 25%,
+    var(--surface-muted) 50%,
+    var(--surface-sunken) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease infinite;
+}
+
+/* Custom minimal scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--divider);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ink-subtle);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.markdown-body {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--ink);
+}
+
+.markdown-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  font-size: 14px;
+}
+.markdown-body th,
+.markdown-body td {
+  border-bottom: 1px solid var(--divider);
+  padding: 10px 12px;
+  text-align: left;
+}
+.markdown-body th {
+  font-weight: 600;
+  color: var(--ink);
+  border-bottom: 2px solid var(--ink);
+}
+.markdown-body p {
+  margin-bottom: 1rem;
+}
+.markdown-body p:last-child {
+  margin-bottom: 0;
+}
+.markdown-body ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+.markdown-body ol {
+  list-style-type: decimal;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+.markdown-body li {
+  margin-bottom: 0.25rem;
+}
+.markdown-body h1, .markdown-body h2, .markdown-body h3, .markdown-body h4 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--ink);
+}
+
+.markdown-body code {
+  font-family: var(--font-mono);
+  background-color: var(--surface-sunken);
+  padding: 0.15em 0.35em;
+  font-size: 0.875em;
+  word-break: break-all;
+  color: var(--ink);
+}
